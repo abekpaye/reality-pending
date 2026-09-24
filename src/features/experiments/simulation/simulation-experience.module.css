@@ -1,0 +1,283 @@
+.experience {
+  --field-x: 50%;
+  --field-y: 50%;
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: clamp(8.5rem, 12vw, 10rem) var(--page-pad) max(2rem, env(safe-area-inset-bottom));
+  isolation: isolate;
+}
+
+.structure {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.1;
+  background-image: linear-gradient(90deg, transparent 49.9%, var(--accent) 50%, transparent 50.1%);
+  transform: scaleX(0.72) rotate(0.35deg);
+  transition: opacity 600ms var(--ease-out), transform 700ms var(--ease-out), background-size 700ms var(--ease-out);
+}
+
+.experience[data-substrate="simulated"] .structure {
+  opacity: 0.16;
+  transform: scaleX(1) rotate(0deg);
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--accent) 20%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--accent) 14%, transparent) 1px, transparent 1px);
+  background-size: clamp(4rem, 8vw, 8rem) clamp(4rem, 8vw, 8rem);
+  mask-image: radial-gradient(circle at 50% 48%, black, transparent 75%);
+}
+
+.header {
+  position: absolute;
+  top: clamp(4.5rem, 6vw, 5.25rem);
+  right: var(--page-pad);
+  left: var(--page-pad);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.returnLink,
+.textLink {
+  color: var(--muted);
+  font-size: var(--text-label);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.returnLink:hover,
+.textLink:hover { color: var(--foreground); }
+
+.narrative,
+.completed {
+  display: flex;
+  min-height: calc(100svh - clamp(8rem, 14vw, 11rem));
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow,
+.contextHeading,
+.completedLabel {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: var(--text-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.narrativeCopy { max-width: 62rem; }
+.narrativeCopy p { margin: 0; }
+
+.primaryLine {
+  color: var(--foreground);
+  font-size: clamp(2.7rem, 6.5vw, 7.4rem);
+  font-weight: 430;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+  text-wrap: balance;
+}
+
+.followingLine {
+  max-width: 50rem;
+  padding-top: clamp(0.85rem, 2vw, 1.5rem);
+  color: var(--secondary);
+  font-size: clamp(1.35rem, 2.8vw, 2.5rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.advance {
+  display: flex;
+  width: fit-content;
+  min-height: 3rem;
+  margin-top: clamp(3rem, 7vw, 6rem);
+  padding: 0;
+  align-items: center;
+  gap: 1rem;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+  color: var(--secondary);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--text-secondary);
+  text-align: left;
+}
+
+.advance:hover { color: var(--foreground); border-color: var(--accent); }
+
+.positioning,
+.reflection {
+  width: min(100%, 86rem);
+  min-height: calc(100svh - clamp(8rem, 14vw, 11rem));
+  margin: 0 auto;
+  padding-top: clamp(1rem, 3vh, 3rem);
+}
+
+.positioning h1,
+.reflection h1,
+.completed h1 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: clamp(2.7rem, 6.1vw, 6.8rem);
+  font-weight: 420;
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.instruction {
+  max-width: 34rem;
+  margin: 1.4rem 0 0;
+  color: var(--secondary);
+  font-size: var(--text-secondary);
+}
+
+.field {
+  position: relative;
+  min-height: clamp(24rem, 40vw, 34rem);
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.fieldLines {
+  position: absolute;
+  inset: 5.5rem 14% 3rem;
+  border-right: 1px solid color-mix(in srgb, var(--border) 78%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 78%, transparent);
+  transform: rotate(45deg) skew(-10deg, -10deg);
+  transform-origin: center;
+}
+
+.marker {
+  position: absolute;
+  z-index: 2;
+  top: var(--field-y);
+  left: var(--field-x);
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 2px solid var(--background);
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+  transform: translate(-50%, -50%);
+  transition: top 360ms var(--ease-out), left 360ms var(--ease-out);
+}
+
+.field[data-selection="physical-reality"] { --field-x: 50%; --field-y: 25%; }
+.field[data-selection="uncertain"] { --field-x: 18%; --field-y: 72%; }
+.field[data-selection="experiential-reality"] { --field-x: 82%; --field-y: 72%; }
+
+.position {
+  position: absolute;
+  width: min(23rem, 31%);
+  min-height: 5.5rem;
+  padding: 0.85rem;
+  border: 0;
+  border-left: 1px solid var(--border);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--background) 82%, transparent);
+  color: var(--secondary);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: color 180ms ease, border-color 180ms ease, opacity 180ms ease;
+}
+
+.position[data-position="physical-reality"] { top: 0; left: 50%; transform: translateX(-50%); }
+.position[data-position="uncertain"] { bottom: 0; left: 0; }
+.position[data-position="experiential-reality"] { right: 0; bottom: 0; }
+.position:hover,
+.position[data-active="true"] { border-color: var(--accent); color: var(--foreground); }
+.field:has(.position[data-active="true"]) .position[data-active="false"] { opacity: 0.5; }
+
+.positionTitle {
+  display: block;
+  font-size: clamp(0.85rem, 1.25vw, 1.05rem);
+  font-weight: 560;
+  letter-spacing: 0.045em;
+  line-height: 1.2;
+}
+
+.positionSupport {
+  display: block;
+  max-height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  color: var(--secondary);
+  font-size: var(--text-secondary);
+  line-height: 1.45;
+  opacity: 0;
+  transition: max-height 250ms var(--ease-out), margin 250ms var(--ease-out), opacity 180ms ease;
+}
+
+.position[data-active="true"] .positionSupport {
+  max-height: 7rem;
+  margin-top: 0.75rem;
+  opacity: 1;
+}
+
+.commit { display: flex; justify-content: center; margin-top: 1rem; }
+
+.reflection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.reflectionLead {
+  max-width: 42rem;
+  margin: 1.5rem 0 clamp(3rem, 6vw, 5rem);
+  color: var(--secondary);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.5;
+}
+
+.context { max-width: 64rem; border-top: 1px solid var(--border); padding-top: 1.25rem; }
+.context dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 3vw, 3rem); margin: 0; }
+.context dl div { border-top: 1px solid color-mix(in srgb, var(--border) 65%, transparent); padding-top: 1rem; }
+.context dt { color: var(--foreground); font-size: var(--text-label); letter-spacing: 0.1em; }
+.context dd { margin: 0.55rem 0 0; color: var(--secondary); line-height: 1.45; }
+.contextNote { max-width: 48rem; margin: 1.75rem 0 0; color: var(--muted); font-size: var(--text-secondary); }
+.reflectionControls { display: flex; align-items: center; justify-content: flex-end; gap: 1rem; margin-top: clamp(2.5rem, 5vw, 4rem); }
+
+.completed { align-items: flex-start; }
+.completed h1 { color: var(--accent); }
+.completedPosition { max-width: 42rem; margin-top: clamp(3rem, 7vw, 6rem); padding-top: 1rem; border-top: 1px solid var(--border); }
+.completedPosition p:last-child { margin: 0; font-size: clamp(1.3rem, 2.2vw, 1.8rem); line-height: 1.25; }
+.completionNote { max-width: 34rem; margin: 2rem 0; color: var(--muted); line-height: 1.55; }
+.loading { display: grid; min-height: 100svh; place-items: center; color: var(--muted); }
+
+@media (max-width: 700px) {
+  .experience { padding-top: 8.75rem; }
+  .header { align-items: center; }
+  .positioning { padding-top: 1rem; }
+  .positioning h1, .reflection h1, .completed h1 { font-size: clamp(2.5rem, 9vw, 4.2rem); }
+  .field { min-height: 31rem; margin-top: 1.5rem; }
+  .fieldLines { inset: 7rem 28% 7rem; }
+  .position { width: 46%; min-height: 5.25rem; padding: 0.7rem; }
+  .position[data-position="physical-reality"] { top: 0; width: 74%; }
+  .position[data-position="uncertain"] { bottom: 1rem; left: 0; }
+  .position[data-position="experiential-reality"] { right: 0; bottom: 1rem; }
+  .field[data-selection="physical-reality"] { --field-y: 29%; }
+  .field[data-selection="uncertain"] { --field-x: 24%; --field-y: 66%; }
+  .field[data-selection="experiential-reality"] { --field-x: 76%; --field-y: 66%; }
+  .positionSupport { font-size: 0.83rem; }
+  .commit { margin-top: 0; }
+  .commit :global(.button) { width: 100%; }
+  .context dl { grid-template-columns: 1fr; gap: 1.25rem; }
+  .reflection { justify-content: flex-start; padding-top: 1rem; }
+  .reflectionControls { align-items: stretch; flex-direction: column-reverse; }
+  .reflectionControls :global(.button) { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .structure, .marker, .position, .positionSupport { transition: none; }
+}
