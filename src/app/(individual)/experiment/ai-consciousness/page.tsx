@@ -1,0 +1,1 @@
+import type{Metadata}from"next";import{AiConsciousnessExperience}from"@/features/experiments/ai-consciousness/ai-consciousness-experience";export const metadata:Metadata={title:"Can a Machine Be Conscious? — REALITY PENDING"};export default function Page(){return <AiConsciousnessExperience/>}

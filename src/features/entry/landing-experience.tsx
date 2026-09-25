@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useState } from "react";
 import { ApplicationShell } from "@/components/layout/application-shell";
 import { Button } from "@/components/ui/button";
@@ -57,6 +58,11 @@ export function LandingExperience() {
                 ENTER THE EXPERIMENT
               </Button>
               <p>Think first. Decide second. Doubt everything.</p>
+              <nav className="landing__secondary" aria-label="Explore REALITY PENDING">
+                <Link href="/class">CLASS MODE</Link>
+                <Link href="/concepts">EXPLORE CONCEPTS</Link>
+                <Link href="/discussion">SEMINAR DISCUSSION</Link>
+              </nav>
             </motion.div>
 
             <div className="landing__boundary" aria-hidden="true"><span /></div>

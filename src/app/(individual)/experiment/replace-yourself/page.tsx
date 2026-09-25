@@ -1,0 +1,1 @@
+import type{Metadata}from"next";import{ReplaceYourselfExperience}from"@/features/experiments/replace-yourself/replace-yourself-experience";export const metadata:Metadata={title:"What Makes You You? — REALITY PENDING"};export default function Page(){return <ReplaceYourselfExperience/>}

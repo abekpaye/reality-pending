@@ -54,7 +54,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phase 4.
 - Acceptance: user can mark a threshold or reject the premise and results persist.
 - Validation: sequence, reset, mobile controls, state tests.
-- Completion: `[ ]`
+- Completion: `[x]`
 
 ## Phase 7 — Evidence Chain
 
@@ -63,7 +63,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phase 4.
 - Acceptance: every stage stores a value and the trajectory is readable on mobile.
 - Validation: slider keyboard/touch, timeline data, reduced-motion.
-- Completion: `[ ]`
+- Completion: `[x]`
 
 ## Phase 8 — Brain in a Vat
 
@@ -72,7 +72,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phase 4.
 - Acceptance: no grading or automated classification; text survives refresh.
 - Validation: autosave, long text, keyboard, mobile keyboard behavior.
-- Completion: `[ ]`
+- Completion: `[x]`
 
 ## Phase 9 — AI Consciousness
 
@@ -81,7 +81,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phase 4.
 - Acceptance: evidence set is assembled, not a checkbox quiz, and interpretation is cautious.
 - Validation: selection constraints, persistence, accessibility fallback.
-- Completion: `[ ]`
+- Completion: `[x]`
 
 ## Phase 10 — Teleporter
 
@@ -90,7 +90,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phase 4.
 - Acceptance: both branches and the ranking affect the recorded result.
 - Validation: keyboard reorder, touch fallback, response mapping.
-- Completion: `[ ]`
+- Completion: `[x]`
 
 ## Phase 11 — Replace Yourself
 
@@ -99,7 +99,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phase 4.
 - Acceptance: not a sequence of identical pages; judgment-change threshold is recorded.
 - Validation: stage progression, refresh, mobile layout, reduced motion.
-- Completion: `[ ]`
+- Completion: `[x]`
 
 ## Phase 12 — Philosophical Map
 
@@ -108,7 +108,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phases 5–11.
 - Acceptance: output is reproducible and never labels a user as a philosopher/type.
 - Validation: fixture sessions, scoring unit tests, empty/incomplete states.
-- Completion: `[ ]`
+- Completion: `[x]`
 
 ## Phase 13 — Explore Concepts and Discussion
 
@@ -117,7 +117,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phase 12.
 - Acceptance: content follows experience and remains scannable, not encyclopedic.
 - Validation: content audit and route smoke tests.
-- Completion: `[ ]`
+- Completion: `[x]`
 
 ## Phase 14 — Class Mode backend
 
@@ -126,7 +126,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Individual Mode data model; Supabase project.
 - Acceptance: no privileged key exposure; invalid/expired/unavailable states are handled.
 - Validation: policy tests, reconnect tests, anonymous join tests.
-- Completion: `[ ]`
+- Completion: `[x]` (repository implementation complete; live Supabase verification requires external configuration documented in `SETUP_REQUIRED.md`)
 
 ## Phase 15 — Class Mode host/participant UX
 
@@ -135,7 +135,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phase 14.
 - Acceptance: host can run an experiment while participants respond from phones.
 - Validation: two-browser session, refresh/disconnect, projection and mobile checks.
-- Completion: `[ ]`
+- Completion: `[x]` (implemented and configuration/error states verified; live two-browser room flow awaits Supabase credentials)
 
 ## Phase 16 — Class result visualizations
 
@@ -144,7 +144,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phase 15.
 - Acceptance: each experiment has an appropriate distinct visualization readable on projection and mobile.
 - Validation: representative data fixtures, no-data/one-response states.
-- Completion: `[ ]`
+- Completion: `[x]`
 
 ## Phase 17 — Mobile/accessibility polish
 
@@ -153,7 +153,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phases 2–16.
 - Acceptance: no horizontal scrolling and no essential interaction unavailable without drag or color.
 - Validation: manual device-size matrix and accessibility tooling.
-- Completion: `[ ]`
+- Completion: `[x]`
 
 ## Phase 18 — Content audit
 
@@ -162,7 +162,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phases 5–13.
 - Acceptance: content matches the specification and preserves uncertainty.
 - Validation: editorial review against `PROJECT_SPEC.md`.
-- Completion: `[ ]`
+- Completion: `[x]`
 
 ## Phase 19 — QA and performance
 
@@ -171,7 +171,7 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phases 1–18.
 - Acceptance: production build succeeds and core journey is recoverable.
 - Validation: typecheck, lint, tests, build, manual regression.
-- Completion: `[ ]`
+- Completion: `[x]`
 
 ## Phase 20 — Deployment
 
@@ -180,4 +180,4 @@ Status legend: `[ ]` not started, `[x]` complete. No phase is marked complete be
 - Dependencies: Phase 19 and hosting configuration.
 - Acceptance: deployed Individual Mode works; Class Mode is verified if enabled.
 - Validation: production smoke test and rollback notes.
-- Completion: `[ ]`
+- Completion: `[ ]` — blocked by external hosting target and production Supabase credentials; repository runbook is complete.

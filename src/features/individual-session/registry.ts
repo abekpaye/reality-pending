@@ -14,6 +14,12 @@ export function getExperimentIndex(id: ExperimentId): number {
   return experimentIds.indexOf(id);
 }
 
+export function getExperiment(id: ExperimentId): ExperimentMetadata {
+  const experiment = orderedExperiments.find((item) => item.id === id);
+  if (!experiment) throw new Error(`Unknown experiment: ${id}`);
+  return experiment;
+}
+
 export function getPreviousExperimentId(id: ExperimentId): ExperimentId | null {
   const index = getExperimentIndex(id);
   return index > 0 ? experimentIds[index - 1] : null;

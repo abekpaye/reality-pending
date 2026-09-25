@@ -181,8 +181,8 @@ export function SimulationExperience() {
                 <p className={styles.completedLabel}>Your position</p>
                 <p>{positionCopy[state.committedPosition].title}</p>
               </div>
-              <p className={styles.completionNote}>Your response has been preserved. The next experiment is not yet available.</p>
-              <Link href="/" className={styles.textLink}>Return to REALITY PENDING</Link>
+              <p className={styles.completionNote}>Your response has been preserved.</p>
+              <Link href="/experiment/replace-world" className={styles.textLink}>Continue to 02 — Replace the World</Link>
             </motion.section>
           )}
         </AnimatePresence>

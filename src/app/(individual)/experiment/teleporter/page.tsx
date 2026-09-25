@@ -1,0 +1,1 @@
+import type{Metadata}from"next";import{TeleporterExperience}from"@/features/experiments/teleporter/teleporter-experience";export const metadata:Metadata={title:"Would You Survive? — REALITY PENDING"};export default function Page(){return <TeleporterExperience/>}

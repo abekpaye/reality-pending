@@ -1,0 +1,1 @@
+import type{Metadata}from"next";import{PhilosophicalMapExperience}from"@/features/philosophical-map/philosophical-map-experience";export const metadata:Metadata={title:"Your Philosophical Map — REALITY PENDING"};export default function Page(){return <PhilosophicalMapExperience/>}

@@ -1,0 +1,313 @@
+.entry,
+.host,
+.participant {
+  --accent: #4da3ff;
+  min-height: 100svh;
+  padding: 9rem var(--page-pad) max(2rem, env(safe-area-inset-bottom));
+}
+.entry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.eyebrow {
+  margin: 0 0 1.5rem;
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+}
+.entry h1,
+.host h1,
+.participant h1 {
+  margin: 0;
+  max-width: 15ch;
+  font-size: clamp(3.2rem, 8vw, 8rem);
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 0.9;
+}
+.entry > p:not(.eyebrow) {
+  max-width: 40rem;
+  color: var(--secondary);
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+.entryActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.entryActions a,
+.primaryLink {
+  min-width: 12rem;
+  padding: 1rem;
+  border: 1px solid var(--accent);
+  color: var(--foreground);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+.configuration {
+  max-width: 44rem;
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  border-block: 1px solid var(--border);
+}
+.configuration strong {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+.configuration p {
+  color: var(--secondary);
+}
+.configuration code {
+  color: var(--foreground);
+}
+.back {
+  margin-top: 3rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-decoration: none;
+}
+.host {
+  width: min(100%, 94rem);
+  margin: auto;
+}
+.hostTop {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: start;
+}
+.roomCode {
+  font-size: clamp(3rem, 7vw, 7rem);
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+.hostMeta {
+  display: flex;
+  gap: 2rem;
+  margin: 1.5rem 0;
+  color: var(--secondary);
+}
+.hostMeta span {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+.qr {
+  padding: 1rem;
+  background: white;
+}
+.hostGrid {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 4rem;
+  margin-top: 4rem;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+.experimentList {
+  display: flex;
+  flex-direction: column;
+}
+.experimentList button {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  min-height: 3.5rem;
+  padding: 0.6rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  color: var(--secondary);
+  text-align: left;
+  cursor: pointer;
+}
+.experimentList button[data-active="true"] {
+  color: var(--foreground);
+  border-bottom-color: var(--accent);
+}
+.hostControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.hostControls button {
+  min-height: 2.8rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--secondary);
+  cursor: pointer;
+}
+.hostControls button:hover {
+  border-color: var(--accent);
+  color: var(--foreground);
+}
+.prompt {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.prompt span {
+  color: var(--accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+.prompt p {
+  font-size: 1.25rem;
+}
+.error {
+  color: #ff8a8a;
+}
+.participant {
+  max-width: 52rem;
+  margin: auto;
+}
+.joinForm {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.joinForm input {
+  width: 16rem;
+  padding: 0.8rem;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  color: var(--foreground);
+  font-size: 2rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.waiting {
+  min-height: 50svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.waiting span {
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+.responsePanel {
+  margin-top: 3rem;
+}
+.responsePanel fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.responsePanel legend {
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+.responseChoices {
+  display: grid;
+  border-top: 1px solid var(--border);
+}
+.responseChoices button {
+  min-height: 3.5rem;
+  padding: 0.75rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  color: var(--secondary);
+  text-align: left;
+  cursor: pointer;
+}
+.responseChoices button[aria-pressed="true"] {
+  color: var(--foreground);
+  border-bottom-color: var(--accent);
+}
+.responsePanel input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+.submit {
+  margin-top: 2rem;
+}
+.submitted {
+  padding: 2rem 0;
+  border-block: 1px solid var(--border);
+  color: var(--secondary);
+}
+.results {
+  margin-top: 3rem;
+}
+.bars {
+  display: grid;
+  gap: 0.8rem;
+}
+.bar {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) 3fr 2rem;
+  gap: 1rem;
+  align-items: center;
+}
+.bar span {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+.bar i {
+  display: block;
+  height: 0.35rem;
+  background: var(--accent);
+}
+.trajectory {
+  height: 14rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.trajectory i {
+  flex: 1;
+  background: var(--accent);
+  min-height: 2px;
+}
+.branchGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+.branchGrid div {
+  padding: 1rem;
+  background: var(--background);
+}
+@media (max-width: 700px) {
+  .entry,
+  .host,
+  .participant {
+    padding-top: 8rem;
+  }
+  .entryActions {
+    width: 100%;
+    flex-direction: column;
+  }
+  .entryActions a {
+    width: 100%;
+  }
+  .hostTop {
+    grid-template-columns: 1fr;
+  }
+  .qr {
+    display: none;
+  }
+  .hostGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .joinForm {
+    flex-direction: column;
+  }
+  .joinForm input {
+    width: 100%;
+  }
+  .bar {
+    grid-template-columns: 7rem 1fr 2rem;
+  }
+}
