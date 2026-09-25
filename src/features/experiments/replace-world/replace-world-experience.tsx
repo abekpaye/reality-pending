@@ -124,13 +124,27 @@ export function ReplaceWorldExperience() {
 function WorldScene({ replacedCount, reduceMotion }: { replacedCount: number; reduceMotion: boolean }) {
   return (
     <figure className={styles.scene} aria-label={`A room with ${replacedCount} of ${replacementElements.length} elements replaced by simulated equivalents`}>
-      <div className={styles.sky} data-simulated={replacedCount >= 1} />
       <div className={styles.wall} data-simulated={replacedCount >= 2} />
-      <div className={styles.window} data-simulated={replacedCount >= 3}><span /></div>
-      <div className={styles.plant} data-simulated={replacedCount >= 4}><i /><i /><i /></div>
-      <div className={styles.desk} data-simulated={replacedCount >= 5} />
-      <div className={styles.object} data-simulated={replacedCount >= 6} />
-      <motion.div className={styles.person} data-simulated={replacedCount >= 7} animate={reduceMotion ? undefined : { x: [0, 1.5, 0] }} transition={{ duration: 3.5, repeat: Infinity }}><span /></motion.div>
+      <div className={styles.floor} aria-hidden="true"><span /><span /><span /><span /></div>
+      <div className={styles.window} data-simulated={replacedCount >= 3}>
+        <div className={styles.sky} data-simulated={replacedCount >= 1}><i /><i /><i /></div>
+        <span className={styles.windowVertical} /><span className={styles.windowHorizontal} />
+        <span className={styles.windowLight} />
+      </div>
+      <div className={styles.wallArt} aria-hidden="true"><span /></div>
+      <div className={styles.plant} data-simulated={replacedCount >= 4}>
+        <span className={styles.plantPot} /><span className={styles.plantStem} />
+        <i /><i /><i /><i /><i />
+      </div>
+      <div className={styles.desk} data-simulated={replacedCount >= 5}>
+        <span className={styles.deskTop} /><span className={styles.deskLegLeft} /><span className={styles.deskLegRight} /><span className={styles.deskDrawer} />
+      </div>
+      <div className={styles.object} data-simulated={replacedCount >= 6}><span /><i /></div>
+      <div className={styles.chair} aria-hidden="true"><span /></div>
+      <motion.div className={styles.person} data-simulated={replacedCount >= 7} animate={reduceMotion ? undefined : { x: [0, 1.5, 0] }} transition={{ duration: 3.5, repeat: Infinity }}>
+        <span className={styles.personHead} /><span className={styles.personBody} /><span className={styles.personArm} />
+      </motion.div>
+      <div className={styles.roomLight} aria-hidden="true" />
       <figcaption>PHYSICAL <span aria-hidden="true">↔</span> SIMULATED</figcaption>
     </figure>
   );
